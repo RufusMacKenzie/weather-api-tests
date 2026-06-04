@@ -8,7 +8,7 @@ load_dotenv()
 
 
 @pytest.fixture(scope="module")
-def weather_client():
+def weather_client() -> WeatherClient:
     api_key = os.environ.get("WEATHER_API_KEY")
     base_url = os.environ.get("WEATHER_BASE_URL")
     if not api_key:
@@ -19,5 +19,10 @@ def weather_client():
 
 
 @pytest.fixture(scope="module")
-def current_weather_json(weather_client):
+def current_weather_json(weather_client: WeatherClient) -> dict:
     return weather_client.get_current_weather("01748").json()
+
+
+@pytest.fixture(scope="module")
+def search_results_json(weather_client: WeatherClient) -> list[dict]:
+    return weather_client.search("lon").json()
