@@ -4,6 +4,7 @@ import pytest
 
 
 def test_missing_q_returns_400_1003():
+    # Testing q param not specified
     url = os.environ.get("WEATHER_BASE_URL") + "/current.json"
     params = {"key": os.environ.get("WEATHER_API_KEY")}
     response = requests.get(url, params=params)
@@ -18,7 +19,7 @@ def test_missing_q_returns_400_1003():
     "location, expected_code",
     [
         ("xyzzy", 1006),
-        ("", 1003),
+        ("", 1003),  # Testing empty q param
     ],
 )
 def test_invalid_location_returns_400(weather_client, location, expected_code):
