@@ -16,8 +16,10 @@ built as a portfolio project to demonstrate Python test automation practices.
 1. Clone the repo
 2. Install dependencies: `pip install -r requirements.txt`
 3. Create a `.env` file with your WeatherAPI key:
+```
 WEATHER_API_KEY=your_key_here
 WEATHER_BASE_URL=http://api.weatherapi.com/v1
+```
 4. Run: `pytest`
 
 ## CI
