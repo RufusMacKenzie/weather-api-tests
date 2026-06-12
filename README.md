@@ -1,3 +1,4 @@
+![pytest](https://github.com/RufusMacKenzie/weather-api-tests/actions/workflows/pytest.yml/badge.svg)
 # WeatherAPI pytest Test Suite
 
 A pytest-based test suite validating the [WeatherAPI](https://www.weatherapi.com) REST API, 
